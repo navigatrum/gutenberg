@@ -35,7 +35,7 @@ function render_block_core_cover( $attributes, $content ) {
 		$content = str_replace(
 			'</span><div',
 			'</span>' . $image . '<div',
-			$content
+			preg_replace( '/<\/span>(\s+)?<div/', '</span><div', $content, 1 )
 		);
 
 	} else {
